@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Training](#training)
+- [Pre-trained Models](#pretrained)
 - [Validation and Metrics Computation](#validation)
 - [Single Image Evaluation](#singleeval)
 - [Dataset](#dataset)
@@ -22,9 +23,19 @@ Finally, use the following to fine-tune the network with real-world data:
 python train.py --datatype real --finetune True --pre_path pre/trained/path --fine_tune_warp True --lr 5e-5 --batch_size 8 --name real_finetuning 
 ```
 
+## Pre-trained Models <a name = "pretrained"></a>
+
 ## Validation and Metrics Computation <a name = "validation"></a>
 
-## Single Image Evaluation <a name = "singleeval"></a>
+To reproduce the results reported in the paper, run the following command choosing the desired device Pixel 6 Pro, Samsung S22 and IPhone XR (respectively 0,1,2):
+
+```sh
+python inference/test.py --full False --pre_path pre/trained/path --infedev [0,1,2] --iso_exp True
+```
+For full resolution images change the full flag to True.
+
+
+## Single Image <a name = "singleeval"></a>
 
 ## Dataset <a name = "dataset"></a>
 

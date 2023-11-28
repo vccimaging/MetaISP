@@ -1,4 +1,17 @@
 # Byte-compiled / optimized / DLL files
+ckpt/
+datasets/*
+wandb/
+run.sh
+data/
+images_test/
+inference/
+models/
+options/
+pre_trained/
+pwc/
+util/
+train.py
 __pycache__/
 *.py[cod]
 *$py.class

@@ -1,7 +1,5 @@
 # MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition
 
-Short description of what this project does and its purpose.
-
 ## Table of Contents
 
 - [Training](#training)

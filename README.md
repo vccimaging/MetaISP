@@ -1,4 +1,4 @@
-# MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition
+# MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition [VMV 2023]
 
 ## Table of Contents
 

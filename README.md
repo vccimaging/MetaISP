@@ -13,15 +13,13 @@
 In this work, the network is initially pre-trained with monitor-captured data and then fine-tuned with real-world data. The datasets structure can be found [here](#dataset). To pre-trained the network run:
 
 ```sh
-   python train.py --datatype monitor --finetune False --fine_tune_warp False \
-   --lr 1e-4 --batch_size 32 --name monitor_pretraining
+python train.py --datatype monitor --finetune False --fine_tune_warp False --lr 1e-4 --batch_size 32 --name monitor_pretraining
 ```
 
 Finally, use the following to fine-tune the network with real-world data:
 
 ```sh
-      python train.py --datatype real --finetune True --pre_path pre/trained/path \
-      --fine_tune_warp True --lr 5e-5 --batch_size 8 --name real_finetuning 
+python train.py --datatype real --finetune True --pre_path pre/trained/path --fine_tune_warp True --lr 5e-5 --batch_size 8 --name real_finetuning 
 ```
 
 ## Validation and Metrics Computation <a name = "validation"></a>

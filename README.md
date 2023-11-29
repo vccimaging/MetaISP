@@ -104,7 +104,8 @@ The datasets can be found [here](https://drive.google.com/drive/folders/1tLWlx0L
     └── meta/
         ├── iphone/
         ├── samsung/        
-        └── pixel/  ```
+        └── pixel/  
+```
 
 
 

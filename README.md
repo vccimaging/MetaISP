@@ -107,8 +107,6 @@ The datasets can be found [here](https://drive.google.com/drive/folders/1tLWlx0L
         └── pixel/  
 ```
 
-
-
 ## Citation
 ```
 @inproceedings {10.2312:vmv.20231236,

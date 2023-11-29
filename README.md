@@ -24,6 +24,8 @@ python train.py --datatype real --finetune True --pre_path pre/trained/path --fi
 ```
 
 ## Pre-trained Models <a name = "pretrained"></a>
+The pre-trained models can be downloaded [here](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing) and should be placed in the folder pre_trained. MetaISPNet_monitor_E and MetaISPNet_real_illuminants are the final results reported in the paper with the all modules. MetaISPNet_real_D does not account for illuminants and iso/exposure module and is used for ablation studies and Xiaomi results in the paper supplementary and zero-shot analysis.
+
 
 ## Validation and Metrics Computation <a name = "validation"></a>
 
@@ -38,7 +40,7 @@ To reproduce the illuminants results:
 ```sh
 python inference/test.py --full False --pre_path pre_trained/MetaISPNet_real_illuminants.pth --infedev [0,1,2] --iso_exp True --illuminant True
 ```
-To generate intermediate results interpolating the device's style, turn the flag latent to True, latent_n is the number of intermediate images to be generated, sname is the image name on the dataset:
+To generate intermediate results interpolating the device's style, turn the flag latent to True, latent_n is the number of intermediate images to be generated, sname is the image name on the dataset that you want to perform the task:
 ```sh
 python inference/test.py --full True --pre_path pre_trained/MetaISPNet_real_E.pth --latent True --latent_n 5 --sname 18
 ```
@@ -52,12 +54,59 @@ python inference/metrics_compute.py --path_gt datasets/real/device/ --path_pred 
 --meta datasets/real/meta/ --save_name metrics.csv
 ```
 
-The metrics_compute.py will compute PSNR, SSIM and DeltaE warping the GT to be aligned with Pred. --meta is the path to the metadata, which contains the file names.
+The metrics_compute.py will compute PSNR, SSIM and DeltaE warping the Ground Truth to be aligned with Prediction. --meta is the path to the metadata, which contains the file names.
 
 
 ## Single Image <a name = "singleeval"></a>
 
+To evaluate a single image.
+
+```sh
+python inference/single_image_test.py --path_model --path_image --device [xiaomi, iphone] --iso_exp [True,False] --illuminant [True,False]
+```
+
+Different devices like xiaomi may underperform due to iso and exp too different from the ones trained with iPhone. In the paper, we used the model pre_trained/MetaISPNet_real_D without iso/exp module to have consistent images. In case will want to use the iso/exp module be aware that we clipped it in the code when Xiaomi is select in order to make it in similar range as the iPhone XR images.
+
+If you want to perform inference with RAW images from different devices, you just need to adjust things like the bayer pattern structure, iso/exp range, black level and so on.
+
 ## Dataset <a name = "dataset"></a>
+
+The datasets can be found [here](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing). To reproduce our results you just need to download and place it in the root folder.
+
+datasets/
+├── real/
+│   ├── iphone/
+│   │   ├── bilinear/
+│   │   ├── full/
+│   │   ├── raw/
+│   │   └── rgb/
+│   ├── samsung/
+│   │   ├── full/
+│   │   └── rgb/
+│   ├── pixel/
+│   │   ├── full/
+│   │   └── rgb/
+│   └── meta/
+│       ├── iphone/
+│       ├── samsung/        
+│       └── pixel/  
+└── monitor/
+    ├── iphone/
+    │   ├── bilinear/
+    │   ├── full/
+    │   ├── raw/
+    │   └── rgb/
+    ├── samsung/
+    │   ├── full/
+    │   └── rgb/
+    ├── pixel/
+    │   ├── full/
+    │   └── rgb/
+    └── meta/
+        ├── iphone/
+        ├── samsung/        
+        └── pixel/  
+
 
 ## Citation
 ```

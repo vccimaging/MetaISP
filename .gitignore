@@ -8,7 +8,7 @@ images_test/
 inference/
 models/
 options/
-pre_trained/
+pre_trained/*
 pwc/
 util/
 train.py

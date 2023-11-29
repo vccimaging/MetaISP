@@ -72,8 +72,7 @@ If you want to perform inference with RAW images from different devices, you jus
 ## Dataset <a name = "dataset"></a>
 
 The datasets can be found [here](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing). To reproduce our results you just need to download and place it in the root folder.
-
-datasets/
+```datasets/
 ├── real/
 │   ├── iphone/
 │   │   ├── bilinear/
@@ -105,7 +104,8 @@ datasets/
     └── meta/
         ├── iphone/
         ├── samsung/        
-        └── pixel/  
+        └── pixel/  ```
+
 
 
 ## Citation

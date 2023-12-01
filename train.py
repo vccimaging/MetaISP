@@ -27,7 +27,7 @@ if __name__ == '__main__':
 	random.seed(seed)
 	cudnn.benchmark = True
 
-	wandb.init(project='your_project', entity='mathmmss', name=opt.name)
+	wandb.init(project='your_project', entity='login', name=opt.name)
 	config = wandb.config
 
 	dataset_train = create_dataset(opt.dataset_name, 'train', opt)

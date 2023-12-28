@@ -122,5 +122,3 @@ The datasets can be found [here](https://drive.google.com/drive/folders/1tLWlx0L
 ```
 ## Aknowledgements
 This code is heavily based on LiteISP and XCIT. We thank the authors for making their code available.
-
-## Contact
